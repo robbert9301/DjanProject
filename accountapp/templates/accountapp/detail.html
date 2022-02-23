@@ -11,7 +11,7 @@
 
 
             {% if target_user.profile %}
-            <img src="{{ target_user.profile.image.url }}" alt=""
+            <img src="{{ target_user.image.url }}" alt=""
                  style="height: 10rem; width: 10rem; border-radius : 20rem; margin-bottom: 2rem; object-fit: cover;">
 
             <h2 style="font-family : MaruBuri-SemiBold">
@@ -47,8 +47,13 @@
             {% if target_user == user %}
                 <a class="material-icons"
                    style="box-shadow: 0 0 4px #ccc; border-radius: 8rem; padding: .4rem;"
-                   href="{% url 'accountapp:update' pk=user.pk %}">
-                     settings
+                   href="{% url 'accountapp:password' %}">
+                     account_circle
+                </a>
+                <a class="material-icons"
+                   style="box-shadow: 0 0 4px #ccc; border-radius: 8rem; padding: .4rem;"
+                   href="{% url 'accountapp:update' pk=user.pk%}">
+                     face
                 </a>
                 <a class="material-icons"
                    style="box-shadow: 0 0 4px #ccc; border-radius: 8rem; padding: .4rem;"
