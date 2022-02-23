@@ -1,0 +1,16 @@
+<div>
+  <p style="text-align: right">
+    {% if article.created_string == False %}
+    <span>
+      <img src="{{ article.writer.profile.image.url }}" alt="" style="float: left; width:30px; height:30px">
+    </span>
+    <span>{{ article.updated_at }}</span>
+    {% else %}
+    <span>
+      <img src="{{ article.writer.profile.image.url }}" alt="" style="float: left; width:30px; height:30px">
+    </span>
+    <span>{{ article.created_string }}</span>
+    {% endif %}
+    <img src="{{ article.image.url }}" alt="">
+  </p>
+</div>

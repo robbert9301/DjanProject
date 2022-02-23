@@ -6,6 +6,28 @@
             </h1>
         </div>
         <div class="pragmatic_header_navbar">
-            <span>nav1</span>
+            <a href="{% url 'articleapp:list' %}" class="pragmatic_header_nav">
+                <span>Articles</span>
+            </a>
+            <a href="{% url 'projectapp:list' %}" class="pragmatic_header_nav">
+                <span>Projects</span>
+            </a>
+            {% if not user.is_authenticated %}
+            <!--  여기서 next는 login 이후에 어디로 보낼것인지에 대한 구문이고 이는 get방식으로 되어있다          -->
+            <a href="{% url 'accountapp:login' %}?next={{ request.path }}">
+                <span>login</span>
+            </a>
+            <a href="{% url 'accountapp:create' %}" class="pragmatic_header_nav">
+                <span>Sign Up</span>
+            </a>
+            {% else %}
+            <a href="{% url 'accountapp:detail' pk=user.pk %}" class="pragmatic_header_nav">
+                <span>MyPage</span>
+            </a>
+            <a href="{% url 'accountapp:logout' %}?next={{ request.path }}" class="pragmatic_header_nav">
+                <span>logout</span>
+            </a>
+            {% endif %}
+
         </div>
     </div>
