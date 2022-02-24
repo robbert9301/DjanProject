@@ -2,15 +2,17 @@
   <p style="text-align: right">
     {% if article.created_string == False %}
     <span>
-      <img src="{{ article.writer.profile.image.url }}" alt="" style="float: left; width:30px; height:30px">
+      <img src="{{ article.writer.image.url }}" alt="" style="float: left; width:30px; height:30px">
     </span>
     <span>{{ article.updated_at }}</span>
     {% else %}
     <span>
-      <img src="{{ article.writer.profile.image.url }}" alt="" style="float: left; width:30px; height:30px">
+      <img src="{{ article.writer.image.url }}" alt="" style="float: left; width:30px; height:30px">
     </span>
     <span>{{ article.created_string }}</span>
     {% endif %}
     <img src="{{ article.image.url }}" alt="">
+    <span class="btn btn-outline-info rounded-pill btn-sm mt-1 mb-1 px-3">Article & Comments</span>
+
   </p>
 </div>

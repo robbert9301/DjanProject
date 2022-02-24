@@ -40,13 +40,10 @@
     <div class="text-center">
         <h1>No Article YET!</h1>
     </div>
+
     {% endif %}
 
     {% include 'snippets/pagination.html' with page_obj=page_obj %}
 
 
-    <div style="text-align: center">
-      <a href="{% url 'articleapp:create' %}" class="btn btn-dark rounded-pill mt-3 mb-3 px-3">
-        Create Article
-      </a>
-    </div>
+
